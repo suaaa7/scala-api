@@ -4,5 +4,5 @@ scala_api:
   volumes:
     - ../scala_api:/opt/scala
   ports:
-    - "9000:9000" 
+    - "8080:8080" 
   tty: true
