@@ -1,0 +1,8 @@
+scala_api:
+  container_name: scala_api
+  build: .
+  volumes:
+    - ../scala_api:/opt/scala
+  ports:
+    - "9000:9000" 
+  tty: true
