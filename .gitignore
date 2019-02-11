@@ -1,2 +1,9 @@
 *.class
 *.log
+
+# mysql
+datastore/
+
+# sbt
+target/
+

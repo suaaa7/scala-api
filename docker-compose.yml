@@ -1,8 +1,23 @@
-scala_api:
-  container_name: scala_api
-  build: .
-  volumes:
-    - ../scala_api:/opt/scala
-  ports:
-    - "8080:8080" 
-  tty: true
+version: '3'
+services:
+  scala_api:
+    container_name: scala_api
+    build: .
+    volumes:
+      - ../scala_api:/opt/scala
+    ports:
+      - "8080:8080" 
+    tty: true
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: dev
+      MYSQL_USER: dev
+      MYSQL_PASSWORD: dev
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./datastore:/etc/mysql/conf.d
+
